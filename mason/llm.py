@@ -16,6 +16,7 @@ import datetime as _dt
 import hashlib
 import json
 import os
+import threading
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Callable, Protocol
@@ -144,6 +145,7 @@ class Ledger:
         self.run_spend = 0.0
         self.calls = 0
         self.cached_calls = 0
+        self._lock = threading.Lock()
 
     @staticmethod
     def _month() -> str:
@@ -169,16 +171,17 @@ class Ledger:
             )
 
     def record(self, cost: float, cached: bool) -> None:
-        self.calls += 1
-        if cached:
-            self.cached_calls += 1
-            return
-        self.run_spend += cost
-        if self.state_file:
-            data = self._load()
-            data[self._month()] = round(float(data.get(self._month(), 0.0)) + cost, 6)
-            self.state_file.parent.mkdir(parents=True, exist_ok=True)
-            self.state_file.write_text(json.dumps(data, indent=2, sort_keys=True))
+        with self._lock:
+            self.calls += 1
+            if cached:
+                self.cached_calls += 1
+                return
+            self.run_spend += cost
+            if self.state_file:
+                data = self._load()
+                data[self._month()] = round(float(data.get(self._month(), 0.0)) + cost, 6)
+                self.state_file.parent.mkdir(parents=True, exist_ok=True)
+                self.state_file.write_text(json.dumps(data, indent=2, sort_keys=True))
 
     def summary(self) -> str:
         return (
@@ -220,7 +223,7 @@ class LLM:
         role: str,
         prompt: str | list[dict],
         *,
-        system: str | None = None,
+        system: str | list[dict] | None = None,
         schema: dict | None = None,
         max_tokens: int = DEFAULT_MAX_TOKENS,
         cache_prefix: bool = False,
@@ -231,7 +234,7 @@ class LLM:
                                      max_tokens=max_tokens, cache_prefix=cache_prefix)
         return self.send(role, request, schema=schema, label=label)
 
-    def build_request(self, role: str, prompt: str | list[dict], *, system: str | None = None,
+    def build_request(self, role: str, prompt: str | list[dict], *, system: str | list[dict] | None = None,
                       schema: dict | None = None, max_tokens: int = DEFAULT_MAX_TOKENS,
                       cache_prefix: bool = False) -> dict:
         r = self.config.role(role)
@@ -243,11 +246,15 @@ class LLM:
             "output_config": {"effort": r.effort},
         }
         if system:
-            request["system"] = system
+            if cache_prefix:
+                # Cache the (large, stable) system prompt — e.g. the course notes — across many questions.
+                blocks = [{"type": "text", "text": system}] if isinstance(system, str) else [dict(b) for b in system]
+                blocks[-1] = {**blocks[-1], "cache_control": {"type": "ephemeral"}}
+                request["system"] = blocks
+            else:
+                request["system"] = system
         if schema is not None:
             request["output_config"]["format"] = {"type": "json_schema", "schema": schema}
-        if cache_prefix:
-            request["cache_control"] = {"type": "ephemeral"}
         return request
 
     def send(self, role: str, request: dict, *, schema: dict | None = None, label: str = "") -> LLMResponse:

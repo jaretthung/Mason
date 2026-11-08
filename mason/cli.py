@@ -61,6 +61,41 @@ def cmd_grade_calibrate(args) -> int:
     return 0 if res.passed else 1
 
 
+def cmd_eval(args) -> int:
+    from .course_io import load_course
+    from .evals.harness import evaluate, exact_key_grader, llm_grader, save_report, summarize
+    from .student.base import GatedOracleStudent, OmniscientStudent
+
+    lc = load_course(args.course_dir)
+    llm = None
+    if args.student == "omniscient":
+        student, grader = OmniscientStudent(), exact_key_grader
+    elif args.student == "oracle":
+        student, grader = GatedOracleStudent(), exact_key_grader
+    else:
+        from .llm import LLM
+        llm = LLM.from_config()
+        grader = llm_grader(llm)
+        if args.student == "baseline":
+            from .student.baseline import BaselineStudent
+            student = BaselineStudent(llm)
+        else:
+            from .student.notebook_student import NotebookStudent  # M6
+            student = NotebookStudent(llm, lc)
+    tests = tuple(t.strip().upper() for t in args.tests.split(","))
+    ablate = args.ablate.split(",") if args.ablate else None
+    report = evaluate(lc, student, grader, tests=tests, ablate=ablate, workers=args.workers,
+                      progress=lambda m: print("  running", m, flush=True))
+    if llm:
+        report["cost"] = llm.ledger.summary()
+    path = save_report(report)
+    print(summarize(report))
+    if llm:
+        print(llm.ledger.summary())
+    print(f"Full results: {path}")
+    return 0 if report["passed"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="mason", description="Mason, the AI student.")
     sub = p.add_subparsers(dest="command", required=True)
@@ -71,11 +106,18 @@ def build_parser() -> argparse.ArgumentParser:
     g = sub.add_parser("grade-calibrate", help="Check AI grader agreement with human labels (live API calls)")
     g.add_argument("course_dir")
     g.add_argument("--labels", default="calibration/grader_labels.yaml")
+    e = sub.add_parser("eval", help="Run the evaluation harness (leakage T1, learning T2, ablation T3)")
+    e.add_argument("course_dir")
+    e.add_argument("--student", default="notebook", choices=["notebook", "baseline", "omniscient", "oracle"],
+                   help="omniscient/oracle are offline fake students that test the harness itself")
+    e.add_argument("--tests", default="T1,T2,T3")
+    e.add_argument("--ablate", default="", help="comma-separated lesson ids for T3 (default: all)")
+    e.add_argument("--workers", type=int, default=4)
     return p
 
 
 COMMANDS = {"ping": cmd_ping, "spend": cmd_spend, "validate": cmd_validate,
-            "grade-calibrate": cmd_grade_calibrate}
+            "grade-calibrate": cmd_grade_calibrate, "eval": cmd_eval}
 
 
 def main(argv: list[str] | None = None) -> int:
