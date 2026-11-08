@@ -96,6 +96,40 @@ def cmd_eval(args) -> int:
     return 0 if report["passed"] else 1
 
 
+def cmd_notebook(args) -> int:
+    from .course_io import load_course
+    from .llm import LLM
+    from .notebook import build_notebook, save_notebook
+    from .student.view import make_view
+
+    lc = load_course(args.course_dir)
+    view = make_view(lc, lc.course.lessons[-1].id)
+    llm = LLM.from_config()
+    nb = build_notebook(view, llm)
+    out = lc.root / ".mason" / "notebook.json" if args.out is None else args.out
+    save_notebook(nb, out)
+    for m in view.lessons:
+        es = [e for e in nb.entries if e.lesson_id == m.lesson_id]
+        cs = [c for c in nb.concepts if c.lesson_id == m.lesson_id]
+        thin = [c.name for c in cs if c.depth == "mentioned_only"]
+        print(f"{m.lesson_id} {m.title}: {len(es)} entries, {len(cs)} concepts"
+              + (f"; mentioned only: {', '.join(thin)}" if thin else "")
+              + ("  [slides only: may be covered verbally]" if m.slide_only else ""))
+        for path, why in m.unreadable:
+            print(f"   not seen by Mason: {path} ({why})")
+    print(f"All {len(nb.entries)} entries verified verbatim. Saved {out}")
+    if args.check and lc.concepts:
+        from .notebook_check import gold_concept_coverage
+        cov = gold_concept_coverage(llm, lc, nb)
+        print(f"Gold concept coverage: {cov['covered']}/{cov['total']} = {cov['rate']:.0%} (bar 90%)")
+        for c in cov["uncovered"]:
+            print(f"   not indexed: {c}")
+        print(llm.ledger.summary())
+        return 0 if cov["rate"] >= 0.9 else 1
+    print(llm.ledger.summary())
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="mason", description="Mason, the AI student.")
     sub = p.add_subparsers(dest="command", required=True)
@@ -106,6 +140,10 @@ def build_parser() -> argparse.ArgumentParser:
     g = sub.add_parser("grade-calibrate", help="Check AI grader agreement with human labels (live API calls)")
     g.add_argument("course_dir")
     g.add_argument("--labels", default="calibration/grader_labels.yaml")
+    n = sub.add_parser("notebook", help="Build Mason's notebook (verbatim entries + AI concept index)")
+    n.add_argument("course_dir")
+    n.add_argument("--out", default=None)
+    n.add_argument("--check", action="store_true", help="M5 check: gold concepts covered by the index (>= 90%%)")
     e = sub.add_parser("eval", help="Run the evaluation harness (leakage T1, learning T2, ablation T3)")
     e.add_argument("course_dir")
     e.add_argument("--student", default="notebook", choices=["notebook", "baseline", "omniscient", "oracle"],
@@ -117,7 +155,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 COMMANDS = {"ping": cmd_ping, "spend": cmd_spend, "validate": cmd_validate,
-            "grade-calibrate": cmd_grade_calibrate, "eval": cmd_eval}
+            "grade-calibrate": cmd_grade_calibrate, "eval": cmd_eval, "notebook": cmd_notebook}
 
 
 def main(argv: list[str] | None = None) -> int:
