@@ -1,0 +1,28 @@
+title: "Sample Biology — Cells and Energy"
+grade: 10
+subject: Biology
+source_note: >
+  Original lessons written for Mason's test suite, following the topic sequence of OpenStax Biology 2e
+  (chapters 4-8). Free to use in this repository.
+lessons:
+  - id: L1
+    title: Cell theory and types of cells
+    files: [{path: L1/notes.md, kind: notes}]
+  - id: L2
+    title: Organelles
+    files: [{path: L2/notes.md, kind: notes}]
+  - id: L3
+    title: The plasma membrane and transport
+    files: [{path: L3/notes.md, kind: notes}]
+  - id: L4
+    title: Energy and enzymes
+    files: [{path: L4/slides.md, kind: slides}]
+  - id: L5
+    title: Cellular respiration
+    files: [{path: L5/notes.md, kind: notes}, {path: L5/video_transcript.vtt, kind: transcript}]
+  - id: L6
+    title: Photosynthesis
+    files: [{path: L6/notes.md, kind: notes}]
+exam_file: exam.yaml
+prerequisites_file: prereqs.yaml
+concepts_file: concepts.yaml

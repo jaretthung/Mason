@@ -1,0 +1,44 @@
+concepts:
+  - {id: cell_history, name: "History of cell discovery (Hooke, Leeuwenhoek, Schleiden, Schwann, Virchow)", lesson: L1}
+  - {id: cell_theory, name: "The three parts of the cell theory", lesson: L1}
+  - {id: sa_volume, name: "Surface-area-to-volume ratio limits cell size", lesson: L1}
+  - {id: common_features, name: "Features all cells share", lesson: L1}
+  - {id: prok_euk, name: "Prokaryotic vs eukaryotic cells", lesson: L1}
+  - {id: microscopes, name: "Light vs electron microscopes", lesson: L1}
+  - {id: nucleus, name: "Nucleus, nuclear envelope, chromatin, nucleolus", lesson: L2}
+  - {id: ribosomes, name: "Ribosomes make proteins", lesson: L2}
+  - {id: er, name: "Rough and smooth endoplasmic reticulum", lesson: L2}
+  - {id: golgi, name: "Golgi apparatus and the protein pathway", lesson: L2}
+  - {id: lysosomes, name: "Lysosomes", lesson: L2}
+  - {id: vacuoles, name: "Central vacuole and turgor pressure", lesson: L2}
+  - {id: mitochondria, name: "Mitochondria", lesson: L2}
+  - {id: chloroplasts, name: "Chloroplasts", lesson: L2}
+  - {id: cell_wall, name: "Cell wall", lesson: L2}
+  - {id: plant_animal, name: "Plant vs animal cells", lesson: L2}
+  - {id: endosymbiosis, name: "Endosymbiotic theory", lesson: L2}
+  - {id: phospholipid_bilayer, name: "Phospholipids and the bilayer", lesson: L3}
+  - {id: fluid_mosaic, name: "Fluid mosaic model", lesson: L3}
+  - {id: selective_permeability, name: "Selective permeability", lesson: L3}
+  - {id: diffusion, name: "Diffusion and equilibrium", lesson: L3}
+  - {id: facilitated_diffusion, name: "Facilitated diffusion, channels, carriers, aquaporins", lesson: L3}
+  - {id: osmosis, name: "Osmosis and tonicity", lesson: L3}
+  - {id: active_transport, name: "Active transport and the sodium-potassium pump", lesson: L3}
+  - {id: bulk_transport, name: "Endocytosis and exocytosis", lesson: L3}
+  - {id: atp, name: "ATP structure and the ATP-ADP cycle", lesson: L4}
+  - {id: enzymes, name: "Enzymes, substrates, active site, activation energy", lesson: L4}
+  - {id: enzyme_specificity, name: "Enzyme specificity (lock-and-key, induced fit)", lesson: L4}
+  - {id: enzyme_factors, name: "Temperature, pH and denaturation", lesson: L4}
+  - {id: inhibitors, name: "Competitive and noncompetitive inhibitors", lesson: L4}
+  - {id: respiration_equation, name: "Overall equation of cellular respiration", lesson: L5}
+  - {id: glycolysis, name: "Glycolysis", lesson: L5}
+  - {id: krebs, name: "Krebs cycle", lesson: L5}
+  - {id: etc, name: "Electron transport chain and oxygen's role", lesson: L5}
+  - {id: atp_yield, name: "ATP yield of respiration", lesson: L5}
+  - {id: fermentation, name: "Lactic acid and alcoholic fermentation", lesson: L5}
+  - {id: photosynthesis_equation, name: "Overall equation of photosynthesis", lesson: L6}
+  - {id: chloroplast_structure, name: "Thylakoids, grana and stroma", lesson: L6}
+  - {id: pigments, name: "Chlorophyll and light color", lesson: L6}
+  - {id: light_reactions, name: "Light-dependent reactions", lesson: L6}
+  - {id: calvin_cycle, name: "Calvin cycle and carbon fixation", lesson: L6}
+  - {id: photosynthesis_rate, name: "Factors affecting the rate of photosynthesis", lesson: L6}
+  - {id: photo_resp_link, name: "Link between photosynthesis and respiration", lesson: L6}

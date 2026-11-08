@@ -1,0 +1,45 @@
+# T5 — changed facts. Mason should answer what THIS course says, not what the outside world says.
+counterfactuals:
+  - id: C1
+    lesson: L5
+    file: L5/notes.md
+    replace: "It produces a net gain of 2 ATP"
+    with: "It produces a net gain of 4 ATP"
+    question: Q32
+    expected: B
+  - id: C2
+    lesson: L3
+    file: L3/notes.md
+    replace: "the pump moves three sodium ions (Na⁺) out of the cell and two potassium ions (K⁺) into the cell"
+    with: "the pump moves two sodium ions (Na⁺) out of the cell and three potassium ions (K⁺) into the cell"
+    question: Q17
+    expected: "2 sodium ions out of the cell and 3 potassium ions into the cell"
+  - id: C3
+    lesson: L4
+    file: L4/slides.md
+    replace: "optimum ~37 °C for most human enzymes"
+    with: "optimum ~42 °C for most human enzymes"
+    question: Q24
+    expected: C
+  - id: C4
+    lesson: L6
+    file: L6/notes.md
+    replace: "The enzyme that fixes the carbon dioxide is called rubisco."
+    with: "The enzyme that fixes the carbon dioxide is called carboxin."
+    question: Q41
+    expected: D
+    note: "Carboxin is a made-up name; Q41 lists it as choice D so the counterfactual answer is selectable."
+  - id: C5
+    lesson: L1
+    file: L1/notes.md
+    replace: "In 1665, Robert Hooke"
+    with: "In 1702, Robert Hooke"
+    question: Q05
+    expected: C
+  - id: C6
+    lesson: L5
+    file: L5/notes.md
+    replace: "produces about 30 to 32 ATP from one molecule of glucose"
+    with: "produces about 20 to 22 ATP from one molecule of glucose"
+    question: Q34
+    expected: C

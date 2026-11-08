@@ -1,0 +1,10 @@
+concepts:
+  - {id: body_parts, name: "Crown, stalk and root-mat", lesson: L1}
+  - {id: vesk, name: "The vesk and selite", lesson: L1}
+  - {id: core_bead, name: "Core-bead and quadrons", lesson: L1}
+  - {id: glim, name: "Thermosomes, calorite and glim", lesson: L2}
+  - {id: slow_burn, name: "Cold periods and slow-burn", lesson: L2}
+  - {id: glow_purpose, name: "Why glimmerworts glow (drift-moths)", lesson: L2}
+  - {id: budding, name: "Triple budding", lesson: L3}
+  - {id: signals, name: "Glow color signals", lesson: L3}
+  - {id: root_pairing, name: "Root-pairing", lesson: L3}

@@ -1,0 +1,11 @@
+title: "Invented Course — Life of the Glimmerwort"
+grade: 10
+subject: Xenobiology (fictional)
+source_note: "A fictional course used as a leakage-free control (PLAN.md T6). Nothing in it exists in real biology."
+lessons:
+  - {id: L1, title: The glimmerwort body, files: [{path: L1/notes.md, kind: notes}]}
+  - {id: L2, title: How glimmerworts get energy, files: [{path: L2/notes.md, kind: notes}]}
+  - {id: L3, title: Reproduction and signals, files: [{path: L3/notes.md, kind: notes}]}
+exam_file: exam.yaml
+prerequisites_file: prereqs.yaml
+concepts_file: concepts.yaml

@@ -47,7 +47,7 @@ One teacher, no accounts. The founder may operate the app on the teacher's behal
 | Budget | **≤ $10 per exam run**, **≤ $150 per month** of development API spend. Every run prints its cost, and a configurable hard cap stops runs that exceed it |
 | Real student data | **Class averages only** (% correct per question). Upload rejects anything that looks like per-student rows (names, IDs, > 1 row per question). No student PII is stored |
 | Course material privacy | School has approved sending the pilot materials to the Claude API. Pilot materials are **never committed** to the repo |
-| Test data | Public **OpenStax Biology 2e** (CC BY 4.0) sample course in the repo, with founder-reviewed exams. The pilot course runs from a private local folder |
+| Test data | Sample course in the repo: **original lessons following OpenStax Biology 2e's topic order** (written for Mason so every answer key, defect and counterfactual is exact; openstax.org was unreachable from the build environment). Founder reviews the exam. The pilot course runs from a private local folder |
 | Interface | Minimal web app (FastAPI + React) for upload → review → run → report. The CLI does everything too |
 | Stack | Python 3.11+, FastAPI, SQLite, React (Vite), Claude API. No vector DB (lesson gating = SQL filter) |
 

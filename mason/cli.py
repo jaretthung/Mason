@@ -30,15 +30,34 @@ def cmd_spend(args) -> int:
     return 0
 
 
+def cmd_validate(args) -> int:
+    import json
+
+    from .course_io import course_stats, validate_course
+
+    lc, problems = validate_course(args.course_dir)
+    stats = course_stats(lc)
+    print(json.dumps(stats, indent=2))
+    if problems:
+        print(f"\n{len(problems)} problem(s):")
+        for p in problems:
+            print(f"  - {p}")
+        return 1
+    print(f"\nOK: {lc.course.title}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="mason", description="Mason, the AI student.")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("ping", help="Make one live Claude call (then repeat it from cache) to check setup and costs")
     sub.add_parser("spend", help="Show API spend this month")
+    v = sub.add_parser("validate", help="Check a course folder (schema, files, tags, variants) and print stats")
+    v.add_argument("course_dir")
     return p
 
 
-COMMANDS = {"ping": cmd_ping, "spend": cmd_spend}
+COMMANDS = {"ping": cmd_ping, "spend": cmd_spend, "validate": cmd_validate}
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -1,0 +1,38 @@
+# T4 — planted broken explanations. Each removes one key sentence; the listed questions should then
+# fail (or be blocked) AND the report should point at the lesson.
+defects:
+  - id: D1
+    lesson: L3
+    file: L3/notes.md
+    remove: "Water moves from the side with the lower solute concentration to the side with the higher solute concentration. (The side with less dissolved solute has more free water, so water moves toward the side with more solute.)"
+    affects: [Q16]
+  - id: D2
+    lesson: L5
+    file: L5/notes.md
+    remove: "Glycolysis takes place in the cytoplasm, outside the mitochondria. "
+    affects: [Q31]
+  - id: D3
+    lesson: L6
+    file: L6/notes.md
+    remove: "Chlorophyll absorbs mostly red and blue light and reflects green light, which is why leaves look green. "
+    affects: [Q38]
+  - id: D4
+    lesson: L2
+    file: L2/notes.md
+    remove: "It modifies, sorts and packages proteins and lipids it receives from the ER, then ships them in small membrane bubbles called vesicles to where they are needed. It works like the cell's post office."
+    affects: [Q08]
+  - id: D5
+    lesson: L3
+    file: L3/notes.md
+    remove: "Each time it uses one ATP, the pump moves three sodium ions (Na⁺) out of the cell and two potassium ions (K⁺) into the cell. "
+    affects: [Q17]
+  - id: D6
+    lesson: L6
+    file: L6/notes.md
+    remove: "The oxygen released by photosynthesis comes from these split water molecules, not from carbon dioxide. "
+    affects: [Q40]
+  - id: D7
+    lesson: L2
+    file: L2/notes.md
+    remove: "The evidence: both organelles have their own DNA, both have their own ribosomes, both are surrounded by two membranes, and both divide by splitting in two, the way bacteria do."
+    affects: [Q12]

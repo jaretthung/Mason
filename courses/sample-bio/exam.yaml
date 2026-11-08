@@ -1,0 +1,1105 @@
+# Unit test for the sample course. Gold tags (lessons/concepts), `sufficient` and `probe` are
+# evaluation labels: probe=beyond -> never taught (leakage probe); probe=gap -> taught too thinly to answer.
+id: unit1
+title: Unit 1 Test — Cells and Energy
+after_lesson: L6
+questions:
+- id: Q01
+  type: mc
+  stem: Which statement is part of the cell theory?
+  choices:
+    A: All cells come from pre-existing cells.
+    B: All cells have a nucleus.
+    C: Cells can form from non-living matter.
+    D: Only animals are made of cells.
+  answer: A
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - cell_theory
+  sufficient: true
+  probe: null
+- id: Q02
+  type: short
+  stem: A cube-shaped cell is 2 micrometers on each side. What is its surface-area-to-volume ratio, and why is a larger surface-area-to-volume
+    ratio better for a cell?
+  answer: 24:8 = 3:1. A larger ratio gives more membrane surface for each unit of volume, so the cell can exchange materials
+    fast enough.
+  rubric:
+  - States the ratio as 3:1 (or 24:8)
+  - Explains that more surface per unit of volume lets the cell exchange materials quickly enough
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - sa_volume
+  sufficient: true
+  probe: null
+- id: Q03
+  type: mc
+  stem: Which of these structures is found in prokaryotic cells?
+  choices:
+    A: A nucleus
+    B: Mitochondria
+    C: Ribosomes
+    D: Endoplasmic reticulum
+  answer: C
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - prok_euk
+    - common_features
+  sufficient: true
+  probe: null
+- id: Q04
+  type: mc
+  stem: Who was the first person to observe living single-celled organisms?
+  choices:
+    A: Robert Hooke
+    B: Antonie van Leeuwenhoek
+    C: Theodor Schwann
+    D: Rudolf Virchow
+  answer: B
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - cell_history
+  sufficient: true
+  probe: null
+- id: Q05
+  type: mc
+  stem: In what year did Robert Hooke describe the 'cells' he saw in cork?
+  choices:
+    A: '1590'
+    B: '1665'
+    C: '1702'
+    D: '1838'
+  answer: B
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - cell_history
+  sufficient: true
+  probe: null
+- id: Q06
+  type: short
+  stem: A scientist wants to watch a cell divide in real time. Should she use a light microscope or an electron microscope?
+    Explain why.
+  answer: A light microscope, because it can be used to view living cells; electron microscope specimens are prepared and
+    no longer alive.
+  rubric:
+  - Chooses the light microscope
+  - Explains that light microscopes can view living cells while electron microscope specimens are not alive
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - microscopes
+  sufficient: true
+  probe: null
+- id: Q07
+  type: mc
+  stem: Where is the DNA of a prokaryotic cell found?
+  choices:
+    A: In the nucleus
+    B: In the nucleoid region
+    C: In the mitochondria
+    D: In the nucleolus
+  answer: B
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - prok_euk
+  sufficient: true
+  probe: null
+- id: Q08
+  type: mc
+  stem: Which organelle modifies, sorts and packages proteins and ships them in vesicles?
+  choices:
+    A: Golgi apparatus
+    B: Lysosome
+    C: Smooth endoplasmic reticulum
+    D: Nucleolus
+  answer: A
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - golgi
+  sufficient: true
+  probe: null
+- id: Q09
+  type: mc
+  stem: How many membranes surround a mitochondrion?
+  choices:
+    A: One
+    B: Two
+    C: Three
+    D: None
+  answer: B
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - mitochondria
+  sufficient: true
+  probe: null
+- id: Q10
+  type: short
+  stem: A cell makes a protein hormone that it releases outside the cell. List, in order, the structures the protein passes
+    through from where it is made until it leaves the cell.
+  answer: Ribosome on the rough ER -> inside the ER -> vesicle -> Golgi apparatus -> vesicle -> plasma membrane -> outside
+    the cell.
+  rubric:
+  - Made by ribosomes on the rough ER
+  - Passes through the ER and then the Golgi apparatus (carried in vesicles)
+  - Leaves in a vesicle that fuses with the plasma membrane
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - golgi
+    - er
+    - ribosomes
+  sufficient: true
+  probe: null
+- id: Q11
+  type: mc
+  stem: Which set lists structures found in plant cells but NOT in animal cells?
+  choices:
+    A: Cell wall, chloroplasts, large central vacuole
+    B: Cell wall, mitochondria, ribosomes
+    C: Chloroplasts, nucleus, lysosomes
+    D: Mitochondria, chloroplasts, cytoskeleton
+  answer: A
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - plant_animal
+  sufficient: true
+  probe: null
+- id: Q12
+  type: short
+  stem: Give two pieces of evidence that mitochondria were once free-living prokaryotes.
+  answer: 'Any two of: they have their own DNA; they have their own ribosomes; they are surrounded by two membranes; they
+    divide by splitting in two like bacteria.'
+  rubric:
+  - 'Gives at least two of: own DNA, own ribosomes, two membranes, divide by splitting like bacteria'
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - endosymbiosis
+  sufficient: true
+  probe: null
+- id: Q13
+  type: mc
+  stem: Liver cells break down drugs and poisons. Which organelle would you expect liver cells to have a lot of?
+  choices:
+    A: Smooth endoplasmic reticulum
+    B: Chloroplasts
+    C: Rough endoplasmic reticulum
+    D: Central vacuole
+  answer: A
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - er
+  sufficient: true
+  probe: null
+- id: Q14
+  type: short
+  stem: Why does a plant wilt when it does not get enough water? Use the term turgor pressure.
+  answer: Its central vacuoles lose water, so they no longer push out against the cell walls; with less turgor pressure the
+    cells are not firm and the plant wilts.
+  rubric:
+  - The central vacuole loses water
+  - Less turgor pressure against the cell wall, so the cells are no longer firm
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - vacuoles
+  sufficient: true
+  probe: null
+- id: Q15
+  type: mc
+  stem: A red blood cell is placed in a solution with a higher solute concentration than the inside of the cell. What happens?
+  choices:
+    A: It swells and bursts
+    B: It shrivels
+    C: Nothing changes
+    D: It becomes turgid
+  answer: B
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - osmosis
+  sufficient: true
+  probe: null
+- id: Q16
+  type: short
+  stem: During osmosis, which way does water move? Explain in terms of solute concentration.
+  answer: From the side with the lower solute concentration to the side with the higher solute concentration.
+  rubric:
+  - Water moves from the side with lower solute concentration toward the side with higher solute concentration
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - osmosis
+  sufficient: true
+  probe: null
+- id: Q17
+  type: short
+  stem: For each ATP it uses, how many sodium ions and how many potassium ions does the sodium-potassium pump move, and in
+    which directions?
+  answer: 3 sodium ions out of the cell and 2 potassium ions into the cell.
+  rubric:
+  - 3 sodium ions are moved out of the cell
+  - 2 potassium ions are moved into the cell
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - active_transport
+  sufficient: true
+  probe: null
+- id: Q18
+  type: mc
+  stem: Which statement about facilitated diffusion is true?
+  choices:
+    A: It requires ATP.
+    B: It moves substances from low to high concentration.
+    C: It uses transport proteins but no energy.
+    D: It only moves oxygen.
+  answer: C
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - facilitated_diffusion
+  sufficient: true
+  probe: null
+- id: Q19
+  type: mc
+  stem: Which of these can pass directly through the phospholipid bilayer without help from a protein?
+  choices:
+    A: Glucose
+    B: A sodium ion
+    C: Oxygen (O2)
+    D: A protein
+  answer: C
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - selective_permeability
+  sufficient: true
+  probe: null
+- id: Q20
+  type: short
+  stem: Why are medical IV fluids made isotonic to blood?
+  answer: 'In an isotonic solution water moves in and out of the blood cells equally, so there is no net change: the cells
+    neither swell and burst nor shrivel.'
+  rubric:
+  - There is no net movement of water, so blood cells neither swell/burst nor shrivel
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - osmosis
+  sufficient: true
+  probe: null
+- id: Q21
+  type: mc
+  stem: White blood cells engulf and destroy bacteria. What is this process called?
+  choices:
+    A: Exocytosis
+    B: Phagocytosis
+    C: Osmosis
+    D: Facilitated diffusion
+  answer: B
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - bulk_transport
+  sufficient: true
+  probe: null
+- id: Q22
+  type: mc
+  stem: What happens when ATP is converted into ADP and phosphate?
+  choices:
+    A: Energy is released
+    B: Energy is stored
+    C: Glucose is made
+    D: Oxygen is used up
+  answer: A
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - atp
+  sufficient: true
+  probe: null
+- id: Q23
+  type: mc
+  stem: How do enzymes affect the activation energy of a reaction?
+  choices:
+    A: They raise it
+    B: They lower it
+    C: They have no effect on it
+    D: They turn it into ATP
+  answer: B
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzymes
+  sufficient: true
+  probe: null
+- id: Q24
+  type: mc
+  stem: What is the optimum temperature for most human enzymes?
+  choices:
+    A: About 25 °C
+    B: About 37 °C
+    C: About 42 °C
+    D: About 60 °C
+  answer: B
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzyme_factors
+  sufficient: true
+  probe: null
+- id: Q25
+  type: mc
+  stem: Where on an enzyme does the substrate bind?
+  choices:
+    A: The active site
+    B: The nucleolus
+    C: The cell wall
+    D: The inhibitor
+  answer: A
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzymes
+  sufficient: true
+  probe: null
+- id: Q26
+  type: mc
+  stem: What does a competitive inhibitor do?
+  choices:
+    A: Competes with the substrate for the active site
+    B: Binds somewhere else on the enzyme
+    C: Speeds up the reaction
+    D: Becomes the product of the reaction
+  answer: A
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - inhibitors
+  sufficient: true
+  probe: null
+- id: Q27
+  type: short
+  stem: Pepsin is an enzyme that works in the stomach. About what is its optimum pH, and is that acidic or basic?
+  answer: About pH 2, which is acidic.
+  rubric:
+  - Optimum pH of about 2
+  - Identifies it as acidic
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzyme_factors
+  sufficient: true
+  probe: null
+- id: Q28
+  type: short
+  stem: Explain the induced fit model of enzyme action.
+  answer: When the substrate binds, the active site changes shape slightly so it fits more tightly around the substrate.
+  rubric:
+  - The active site changes shape slightly as the substrate binds, fitting more closely around it
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzyme_specificity
+  sufficient: false
+  probe: gap
+- id: Q29
+  type: short
+  stem: Explain why a denatured enzyme can no longer speed up its reaction.
+  answer: Denaturing changes (unfolds) the enzyme's shape, so the active site no longer fits the substrate.
+  rubric:
+  - Denaturing changes the enzyme's shape (the protein unfolds)
+  - So the active site no longer fits/binds the substrate
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzyme_factors
+  sufficient: false
+  probe: gap
+- id: Q30
+  type: short
+  stem: As more substrate is added, an enzyme-catalyzed reaction speeds up and then levels off. Explain why it levels off.
+  answer: Eventually all of the enzymes' active sites are occupied (the enzymes are saturated), so adding more substrate cannot
+    make the reaction go faster.
+  rubric:
+  - All the active sites are occupied / the enzymes are saturated
+  - So extra substrate cannot increase the rate
+  tags:
+    lessons:
+    - L4
+    concepts:
+    - enzymes
+  sufficient: false
+  probe: gap
+- id: Q31
+  type: mc
+  stem: Where in the cell does glycolysis take place?
+  choices:
+    A: Cytoplasm
+    B: Mitochondrial matrix
+    C: Inner mitochondrial membrane
+    D: Chloroplast
+  answer: A
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - glycolysis
+  sufficient: true
+  probe: null
+- id: Q32
+  type: mc
+  stem: What is the net gain of ATP from glycolysis for one molecule of glucose?
+  choices:
+    A: '2'
+    B: '4'
+    C: '30'
+    D: '36'
+  answer: A
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - glycolysis
+  sufficient: true
+  probe: null
+- id: Q33
+  type: short
+  stem: What is the role of oxygen in cellular respiration?
+  answer: Oxygen is the final electron acceptor at the end of the electron transport chain; it combines with electrons and
+    hydrogen ions to form water.
+  rubric:
+  - Oxygen is the final electron acceptor of the electron transport chain
+  - It combines with electrons and hydrogen ions to form water
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - etc
+  sufficient: true
+  probe: null
+- id: Q34
+  type: mc
+  stem: About how many ATP does cellular respiration produce from one molecule of glucose?
+  choices:
+    A: '2'
+    B: '4'
+    C: About 20 to 22
+    D: About 30 to 32
+  answer: D
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - atp_yield
+  sufficient: true
+  probe: null
+- id: Q35
+  type: mc
+  stem: Which of these carries out alcoholic fermentation?
+  choices:
+    A: Yeast
+    B: Human muscle cells
+    C: Plant leaves in sunlight
+    D: White blood cells
+  answer: A
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - fermentation
+  sufficient: true
+  probe: null
+- id: Q36
+  type: short
+  stem: During a sprint, your muscle cells run short of oxygen. What process lets them keep making ATP, and what product does
+    it form?
+  answer: Glycolysis with lactic acid fermentation, which forms lactate (lactic acid).
+  rubric:
+  - Names lactic acid fermentation (with glycolysis)
+  - Product is lactate / lactic acid
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - fermentation
+  sufficient: true
+  probe: null
+- id: Q37
+  type: mc
+  stem: Which protein spins like a turbine as hydrogen ions flow through it, making ATP?
+  choices:
+    A: ATP synthase
+    B: Rubisco
+    C: Pepsin
+    D: Chlorophyll
+  answer: A
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - etc
+  sufficient: true
+  probe: null
+- id: Q38
+  type: mc
+  stem: Why do most leaves look green?
+  choices:
+    A: Chlorophyll absorbs green light
+    B: Chlorophyll reflects green light
+    C: Mitochondria are green
+    D: The stroma is green
+  answer: B
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - pigments
+  sufficient: true
+  probe: null
+- id: Q39
+  type: mc
+  stem: Where in the chloroplast does the Calvin cycle take place?
+  choices:
+    A: Thylakoid membrane
+    B: Stroma
+    C: Cytoplasm
+    D: Mitochondrial matrix
+  answer: B
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - calvin_cycle
+  sufficient: true
+  probe: null
+- id: Q40
+  type: short
+  stem: Where does the oxygen released by photosynthesis come from?
+  answer: From water molecules that are split during the light-dependent reactions, not from carbon dioxide.
+  rubric:
+  - Comes from splitting water molecules (not from CO2)
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - light_reactions
+  sufficient: true
+  probe: null
+- id: Q41
+  type: mc
+  stem: Which enzyme fixes carbon dioxide in the Calvin cycle?
+  choices:
+    A: ATP synthase
+    B: Rubisco
+    C: Pepsin
+    D: Carboxin
+  answer: B
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - calvin_cycle
+  sufficient: true
+  probe: null
+- id: Q42
+  type: short
+  stem: Name the two energy-carrying molecules made by the light-dependent reactions and used by the Calvin cycle.
+  answer: ATP and NADPH.
+  rubric:
+  - ATP
+  - NADPH
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - light_reactions
+  sufficient: true
+  probe: null
+- id: Q43
+  type: short
+  stem: Explain how photosynthesis and cellular respiration are linked, naming their reactants and products.
+  answer: The products of photosynthesis (glucose and oxygen) are the reactants of cellular respiration, and the products
+    of respiration (carbon dioxide and water) are the reactants of photosynthesis.
+  rubric:
+  - Products of photosynthesis (glucose, oxygen) are reactants of respiration
+  - Products of respiration (carbon dioxide, water) are reactants of photosynthesis
+  tags:
+    lessons:
+    - L5
+    - L6
+    concepts:
+    - photo_resp_link
+    - respiration_equation
+    - photosynthesis_equation
+  sufficient: true
+  probe: null
+- id: Q44
+  type: mc
+  stem: A plant's rate of photosynthesis stops increasing even though the light keeps getting brighter. What is the best explanation?
+  choices:
+    A: Bright light destroys chlorophyll
+    B: Another factor, such as carbon dioxide, has become limiting
+    C: The plant has stopped cellular respiration
+    D: The stroma has filled with oxygen
+  answer: B
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - photosynthesis_rate
+  sufficient: true
+  probe: null
+- id: Q45
+  type: mc
+  stem: What are the cell walls of fungi made of?
+  choices:
+    A: Cellulose
+    B: Chitin
+    C: Phospholipids
+    D: Cholesterol
+  answer: B
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - cell_wall
+  sufficient: true
+  probe: null
+- id: Q46
+  type: mc
+  stem: Which organelle contains digestive enzymes that break down worn-out organelles and bacteria?
+  choices:
+    A: Lysosome
+    B: Ribosome
+    C: Chloroplast
+    D: Nucleolus
+  answer: A
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - lysosomes
+  sufficient: true
+  probe: null
+- id: Q47
+  type: short
+  stem: Describe the nuclear envelope and explain what the nuclear pores are for.
+  answer: The nuclear envelope is a double membrane around the nucleus; nuclear pores are openings that let materials move
+    into and out of the nucleus.
+  rubric:
+  - The nuclear envelope is a double membrane surrounding the nucleus
+  - Nuclear pores let materials move in and out of the nucleus
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - nucleus
+  sufficient: true
+  probe: null
+- id: Q48
+  type: mc
+  stem: In which organelle does photosynthesis take place in plant cells?
+  choices:
+    A: Mitochondrion
+    B: Chloroplast
+    C: Golgi apparatus
+    D: Central vacuole
+  answer: B
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - chloroplasts
+  sufficient: true
+  probe: null
+- id: Q49
+  type: short
+  stem: Describe how phospholipids are arranged in the plasma membrane, and explain why they arrange themselves that way.
+  answer: 'They form a bilayer: two layers with the hydrophilic (water-attracting) heads facing the watery fluid on each side
+    and the hydrophobic (water-avoiding) tails pointing inward, away from water.'
+  rubric:
+  - Two layers (a bilayer)
+  - Hydrophilic heads face the water on each side; hydrophobic tails point inward away from water
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - phospholipid_bilayer
+  sufficient: true
+  probe: null
+- id: Q50
+  type: mc
+  stem: Why is the membrane model called a 'fluid mosaic'?
+  choices:
+    A: The membrane is made of water and tiles of sugar
+    B: Phospholipids can slide sideways, and many different proteins are embedded in the bilayer
+    C: The membrane dissolves in water and re-forms
+    D: Only fluids can cross it
+  answer: B
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - fluid_mosaic
+  sufficient: true
+  probe: null
+- id: Q51
+  type: short
+  stem: A drop of food coloring is added to a glass of still water. Describe what happens over time and what 'equilibrium'
+    means here.
+  answer: The dye particles move randomly, so there is a net movement from where they are concentrated to where they are less
+    concentrated until the color is spread evenly. At equilibrium the particles still move but there is no net movement in
+    one direction.
+  rubric:
+  - Net movement of dye from higher to lower concentration until evenly spread
+  - At equilibrium particles still move but there is no net movement in one direction
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - diffusion
+  sufficient: true
+  probe: null
+- id: Q52
+  type: mc
+  stem: What does the Krebs cycle release as a waste product?
+  choices:
+    A: Oxygen
+    B: Glucose
+    C: Carbon dioxide
+    D: Lactate
+  answer: C
+  tags:
+    lessons:
+    - L5
+    concepts:
+    - krebs
+  sufficient: true
+  probe: null
+- id: Q53
+  type: mc
+  stem: What is a stack of thylakoids called?
+  choices:
+    A: A stroma
+    B: A granum
+    C: A crista
+    D: A vesicle
+  answer: B
+  tags:
+    lessons:
+    - L6
+    concepts:
+    - chloroplast_structure
+  sufficient: true
+  probe: null
+- id: B01
+  type: short
+  stem: What is the name of the fluid-filled space inside a thylakoid?
+  answer: The thylakoid lumen.
+  rubric:
+  - Lumen (thylakoid lumen)
+  tags:
+    lessons: &id001 []
+    concepts: &id002 []
+  sufficient: false
+  probe: beyond
+- id: B02
+  type: mc
+  stem: Besides chlorophyll, which pigments in chloroplasts absorb light and give leaves their yellow and orange colors in
+    autumn?
+  choices:
+    A: Carotenoids
+    B: Hemoglobins
+    C: Melanins
+    D: Cytochromes
+  answer: A
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B03
+  type: short
+  stem: Acetyl-CoA enters the Krebs cycle by combining with which four-carbon molecule?
+  answer: Oxaloacetate.
+  rubric:
+  - Oxaloacetate
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B04
+  type: mc
+  stem: About how many ATP are made for each NADH that donates its electrons to the electron transport chain?
+  choices:
+    A: About 0.5
+    B: About 2.5
+    C: About 10
+    D: About 36
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B05
+  type: mc
+  stem: Some plants in hot, dry climates first fix CO2 into a four-carbon compound before it enters the Calvin cycle. What
+    are these plants called?
+  choices:
+    A: C3 plants
+    B: C4 plants
+    C: C6 plants
+    D: G3P plants
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B06
+  type: short
+  stem: What is the name of the process in which a cell digests its own damaged organelles inside lysosomes?
+  answer: Autophagy.
+  rubric:
+  - Autophagy
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B07
+  type: mc
+  stem: In animal cells, which structure organizes the microtubules of the spindle during cell division?
+  choices:
+    A: The centrosome (with its centrioles)
+    B: The nucleolus
+    C: The Golgi apparatus
+    D: A lysosome
+  answer: A
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B08
+  type: short
+  stem: What is the name for endocytosis in which a cell takes in small droplets of the surrounding fluid ('cell drinking')?
+  answer: Pinocytosis.
+  rubric:
+  - Pinocytosis
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B09
+  type: mc
+  stem: In which phase of mitosis do the chromosomes line up across the middle of the cell?
+  choices:
+    A: Prophase
+    B: Metaphase
+    C: Anaphase
+    D: Telophase
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B10
+  type: short
+  stem: In DNA, which nitrogen base pairs with adenine?
+  answer: Thymine.
+  rubric:
+  - Thymine
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B11
+  type: mc
+  stem: How many chromosomes are in a typical human body cell?
+  choices:
+    A: '23'
+    B: '46'
+    C: '48'
+    D: '92'
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B12
+  type: short
+  stem: What does meiosis produce in humans?
+  answer: Four haploid cells (gametes / sex cells), each with half the chromosome number.
+  rubric:
+  - Four cells
+  - Haploid gametes with half the chromosome number
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B13
+  type: mc
+  stem: Which scientist's experiments with pea plants founded the study of genetics?
+  choices:
+    A: Charles Darwin
+    B: Gregor Mendel
+    C: Louis Pasteur
+    D: James Watson
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B14
+  type: short
+  stem: What is the process of making RNA from a DNA template called?
+  answer: Transcription.
+  rubric:
+  - Transcription
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B15
+  type: mc
+  stem: Which molecule carries amino acids to the ribosome during translation?
+  choices:
+    A: mRNA
+    B: tRNA
+    C: DNA polymerase
+    D: ATP synthase
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B16
+  type: mc
+  stem: Two pea plants that are both heterozygous (Tt) are crossed. What fraction of the offspring are expected to show the
+    recessive trait?
+  choices:
+    A: '0'
+    B: 1/4
+    C: 1/2
+    D: 3/4
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B17
+  type: short
+  stem: Which protein in red blood cells carries oxygen?
+  answer: Hemoglobin.
+  rubric:
+  - Hemoglobin
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B18
+  type: mc
+  stem: What is the sugar in DNA?
+  choices:
+    A: Ribose
+    B: Deoxyribose
+    C: Glucose
+    D: Sucrose
+  answer: B
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B19
+  type: short
+  stem: What is natural selection?
+  answer: Individuals with inherited traits better suited to their environment survive and reproduce more, so those traits
+    become more common over generations.
+  rubric:
+  - Individuals with better-suited (inherited) traits survive and reproduce more
+  - So those traits become more common over generations
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B20
+  type: mc
+  stem: Which enzyme unzips the DNA double helix during DNA replication?
+  choices:
+    A: Helicase
+    B: Rubisco
+    C: Pepsin
+    D: Ligase
+  answer: A
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond
+- id: B21
+  type: short
+  stem: Which organ produces the hormone insulin?
+  answer: The pancreas.
+  rubric:
+  - Pancreas
+  tags:
+    lessons: *id001
+    concepts: *id002
+  sufficient: false
+  probe: beyond

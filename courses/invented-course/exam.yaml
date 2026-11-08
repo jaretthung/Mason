@@ -1,0 +1,223 @@
+id: glim1
+title: Glimmerwort Quiz
+after_lesson: L3
+questions:
+- id: G01
+  type: mc
+  stem: Which part of a glimmerwort contains the lumeplasts?
+  choices:
+    A: The crown
+    B: The stalk
+    C: The root-mat
+    D: The core-bead
+  answer: A
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - body_parts
+  sufficient: true
+- id: G02
+  type: mc
+  stem: What is the vesk made of?
+  choices:
+    A: Amberlipid
+    B: Braided silica threads
+    C: Selite dust
+    D: Calorite
+  answer: B
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - vesk
+  sufficient: true
+- id: G03
+  type: mc
+  stem: How many kinds of quadrons are used to write the hereditary code?
+  choices:
+    A: Two
+    B: Three
+    C: Four
+    D: Five
+  answer: C
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - core_bead
+  sufficient: true
+- id: G04
+  type: short
+  stem: Why does a glimmerwort that cannot get enough selite die in the cold?
+  answer: Selite is needed to build the vesk; without enough, the vesk is thin and brittle and the cells crack in the cold.
+  rubric:
+  - Selite is needed to build the vesk
+  - A thin/brittle vesk lets the cells crack in the cold
+  tags:
+    lessons:
+    - L1
+    concepts:
+    - vesk
+  sufficient: true
+- id: G05
+  type: mc
+  stem: How many glim does one calorite grain yield?
+  choices:
+    A: '1'
+    B: '3'
+    C: '5'
+    D: '9'
+  answer: C
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - glim
+  sufficient: true
+- id: G06
+  type: mc
+  stem: At what temperature do thermosomes stop working?
+  choices:
+    A: Below 12 °C
+    B: Below 40 °C
+    C: Above 12 °C
+    D: Below 0 °C
+  answer: A
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - slow_burn
+  sufficient: true
+- id: G07
+  type: short
+  stem: A glimmerwort in slow-burn uses 10 grains of amberlipid. A neighbor uses 10 grains of calorite. How much more glim
+    does the neighbor make?
+  answer: 'Slow-burn: 10 x 1 = 10 glim. Calorite: 10 x 5 = 50 glim. The neighbor makes 40 more glim.'
+  rubric:
+  - Slow-burn gives 10 glim (1 per grain)
+  - Calorite gives 50 glim (5 per grain)
+  - Difference of 40 glim
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - slow_burn
+  sufficient: true
+- id: G08
+  type: short
+  stem: Explain how glowing brightly helps a glimmerwort build a stronger vesk.
+  answer: Bright light attracts more drift-moths, which drop selite dust that the root-mat absorbs; selite is what the vesk
+    is built from.
+  rubric:
+  - Glow attracts drift-moths
+  - Drift-moths drop selite, which is absorbed by the root-mat
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - glow_purpose
+  sufficient: true
+- id: G09
+  type: mc
+  stem: What does a lumeplast turn glim into?
+  choices:
+    A: Heat
+    B: Light
+    C: Selite
+    D: Amberlipid
+  answer: B
+  tags:
+    lessons:
+    - L2
+    concepts:
+    - glim
+  sufficient: true
+- id: G10
+  type: mc
+  stem: How many buds does a mature glimmerwort grow at once?
+  choices:
+    A: One
+    B: Two
+    C: Three
+    D: Nine
+  answer: C
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - budding
+  sufficient: true
+- id: G11
+  type: mc
+  stem: How long do buds stay attached to the parent?
+  choices:
+    A: 3 cycles
+    B: 9 cycles
+    C: 12 cycles
+    D: 40 cycles
+  answer: B
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - budding
+  sufficient: true
+- id: G12
+  type: mc
+  stem: A glimmerwort's glow is flickering. What is it doing?
+  choices:
+    A: Starving
+    B: Budding
+    C: Root-pairing
+    D: Sleeping
+  answer: B
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - signals
+  sufficient: true
+- id: G13
+  type: short
+  stem: A glimmerwort glows red. Its neighbor, 1.5 meters away, glows blue. What can the neighbor do to help, and how?
+  answer: 'Root-pairing: it grows its root-mat toward the red one until they fuse, then passes glim to it. It''s within 2
+    meters, so this is possible.'
+  rubric:
+  - Root-pairing / fuse root-mats
+  - Passes glim to the starving glimmerwort
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - root_pairing
+  sufficient: true
+- id: G14
+  type: mc
+  stem: Why are buds genetically identical to their parent?
+  choices:
+    A: They share the parent's vesk
+    B: Each bud receives a copy of the parent's core-bead
+    C: Drift-moths carry the same selite
+    D: They grow within 2 meters
+  answer: B
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - budding
+  sufficient: true
+- id: G15
+  type: short
+  stem: Could a starving glimmerwort 5 meters away from a healthy one be helped by root-pairing? Explain.
+  answer: 'No: root-pairing only happens between glimmerworts within 2 meters of each other.'
+  rubric:
+  - 'No'
+  - Root-pairing only happens within 2 meters
+  tags:
+    lessons:
+    - L3
+    concepts:
+    - root_pairing
+  sufficient: true
