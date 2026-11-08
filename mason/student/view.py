@@ -10,6 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from ..course_io import Counterfactual, Defect, Lesson, LoadedCourse
+from ..ingest import SourceDoc, ingest_file
 
 
 @dataclass(frozen=True)
@@ -18,7 +19,8 @@ class LessonMaterial:
     order: int
     title: str
     slide_only: bool
-    files: tuple[tuple[str, str, str], ...]  # (path, kind, text)
+    files: tuple[tuple[str, str, str], ...]  # (path, kind, text) — readable files only
+    unreadable: tuple[tuple[str, str], ...] = ()  # (path, reason) — "not seen by Mason"
 
 
 @dataclass
@@ -47,27 +49,26 @@ class CourseView:
         return k
 
 
-def text_loader(lc: LoadedCourse, lesson: Lesson, overrides: dict[str, str]) -> list[tuple[str, str, str]]:
-    """Default loader: read text files directly (md/txt/vtt). Replaced by ingestion for pdf/pptx/docx (M4)."""
-    out = []
-    for f in lesson.files:
-        text = overrides.get(f.path)
-        if text is None:
-            text = (lc.root / f.path).read_text()
-        out.append((f.path, f.kind, text))
-    return out
+def ingest_loader(lc: LoadedCourse, lesson: Lesson, overrides: dict[str, str]) -> list[SourceDoc]:
+    """Read every file of a lesson through the ingestion layer (md/txt/vtt/srt/pdf/docx/pptx)."""
+    return [ingest_file(lc.root / f.path, f.kind, rel_path=f.path, text_override=overrides.get(f.path))
+            for f in lesson.files]
 
 
 def make_view(lc: LoadedCourse, as_of: str, *, exclude: tuple[str, ...] = (), overrides: dict[str, str] | None = None,
-              variant: str = "", loader=text_loader) -> CourseView:
+              variant: str = "", loader=ingest_loader) -> CourseView:
     k = lc.course.lesson_order(as_of)
     overrides = overrides or {}
     lessons = []
     for i, lesson in enumerate(lc.course.lessons, start=1):
         if i > k or lesson.id in exclude:  # <-- the gate
             continue
-        lessons.append(LessonMaterial(lesson.id, i, lesson.title, lesson.slide_only,
-                                      tuple(loader(lc, lesson, overrides))))
+        docs = loader(lc, lesson, overrides)
+        readable = tuple((d.path, d.kind, d.text) for d in docs if not d.unreadable)
+        unreadable = tuple((d.path, d.error) for d in docs if d.unreadable)
+        # "may be covered verbally": every file is a slide deck and none has speaker notes
+        slide_only = bool(docs) and all(d.kind == "slides" and not d.has_speaker_notes for d in docs)
+        lessons.append(LessonMaterial(lesson.id, i, lesson.title, slide_only, readable, unreadable))
     return CourseView(lc.course.title, lc.course.grade, lc.course.subject, list(lc.prerequisites), lessons,
                       as_of, tuple(exclude), variant)
 
