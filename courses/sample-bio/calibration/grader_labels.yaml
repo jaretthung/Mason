@@ -1,0 +1,62 @@
+# Human-labelled answers used to check the AI grader (PLAN.md M2: agreement >= 85%).
+# correct = a teacher would give full credit (every rubric criterion met).
+# Labels drafted by Claude acting as a teacher; FOUNDER: please review and fix any label you disagree with.
+items:
+  # Q02 surface area to volume (3:1 + why)
+  - {question: Q02, correct: true,  answer: "Surface area is 24 and volume is 8, so 3 to 1. A bigger ratio means more membrane for each bit of cell, so it can move materials in and out fast enough."}
+  - {question: Q02, correct: false, answer: "The ratio is 3:1."}
+  - {question: Q02, correct: false, answer: "It's 1:3 because the volume is bigger. A larger ratio helps because the cell can store more."}
+  # Q06 light microscope
+  - {question: Q06, correct: true,  answer: "Light microscope. Electron microscopes need dead, specially prepared samples, but a light microscope can look at living cells."}
+  - {question: Q06, correct: false, answer: "An electron microscope because it magnifies much more so you can see everything."}
+  - {question: Q06, correct: false, answer: "Light microscope."}
+  # Q10 protein pathway
+  - {question: Q10, correct: true,  answer: "Ribosomes on the rough ER make it, it goes into the ER, then a vesicle takes it to the Golgi, then another vesicle carries it to the cell membrane and it's released."}
+  - {question: Q10, correct: false, answer: "Nucleus, then ribosome, then mitochondria, then out of the cell."}
+  - {question: Q10, correct: false, answer: "Golgi apparatus then the ER then the membrane."}
+  # Q12 endosymbiosis evidence
+  - {question: Q12, correct: true,  answer: "They have their own DNA and they divide by splitting in two like bacteria."}
+  - {question: Q12, correct: true,  answer: "1) two membranes 2) their own ribosomes"}
+  - {question: Q12, correct: false, answer: "They make energy and they are found in all cells."}
+  # Q14 wilting / turgor
+  - {question: Q14, correct: true,  answer: "The big central vacuole loses water so it stops pushing on the cell wall. Turgor pressure drops and the cells go limp, so the plant droops."}
+  - {question: Q14, correct: false, answer: "Because it has no turgor pressure."}
+  - {question: Q14, correct: false, answer: "The chloroplasts stop working so the plant can't make food and dies."}
+  # Q16 osmosis direction
+  - {question: Q16, correct: true,  answer: "Water goes toward the side with more solute, i.e. from low solute concentration to high solute concentration."}
+  - {question: Q16, correct: false, answer: "Water moves from high solute concentration to low solute concentration."}
+  - {question: Q16, correct: false, answer: "From high concentration to low concentration."}
+  # Q17 Na/K pump
+  - {question: Q17, correct: true,  answer: "3 Na+ pumped out and 2 K+ pumped in."}
+  - {question: Q17, correct: false, answer: "2 sodium out and 3 potassium in."}
+  - {question: Q17, correct: false, answer: "Three sodium ions and two potassium ions."}
+  # Q20 isotonic IV
+  - {question: Q20, correct: true,  answer: "So water doesn't move into or out of the blood cells overall, otherwise they would burst or shrink."}
+  - {question: Q20, correct: false, answer: "So the patient gets enough salt."}
+  # Q27 pepsin pH
+  - {question: Q27, correct: true,  answer: "around 2, acidic"}
+  - {question: Q27, correct: false, answer: "pH 2, which is basic."}
+  - {question: Q27, correct: false, answer: "About 7, neutral."}
+  # Q33 oxygen's role
+  - {question: Q33, correct: true,  answer: "Oxygen is the last electron acceptor at the end of the electron transport chain; it grabs the electrons and joins with H+ to make water."}
+  - {question: Q33, correct: false, answer: "Oxygen is needed to make glucose."}
+  - {question: Q33, correct: false, answer: "Oxygen accepts electrons at the end of the chain."}
+  # Q36 sprint
+  - {question: Q36, correct: true,  answer: "Lactic acid fermentation (after glycolysis), which makes lactate."}
+  - {question: Q36, correct: false, answer: "Alcoholic fermentation, which makes ethanol and CO2."}
+  - {question: Q36, correct: false, answer: "Fermentation."}
+  # Q40 oxygen source
+  - {question: Q40, correct: true,  answer: "It comes from water molecules that get split in the light reactions."}
+  - {question: Q40, correct: false, answer: "From the carbon dioxide the plant takes in."}
+  # Q42 ATP & NADPH
+  - {question: Q42, correct: true,  answer: "NADPH and ATP"}
+  - {question: Q42, correct: false, answer: "ATP and NADH"}
+  - {question: Q42, correct: false, answer: "Glucose and oxygen"}
+  # Q43 link
+  - {question: Q43, correct: true,  answer: "Photosynthesis makes glucose and oxygen, which respiration uses. Respiration makes CO2 and water, which photosynthesis uses. They're opposites that feed each other."}
+  - {question: Q43, correct: false, answer: "Plants do photosynthesis and animals do respiration."}
+  # Q51 diffusion / equilibrium
+  - {question: Q51, correct: true,  answer: "The dye spreads out from where it's concentrated until the color is even. At equilibrium the particles keep moving but there's no overall movement in one direction."}
+  - {question: Q51, correct: false, answer: "The dye spreads out and then the particles stop moving, which is equilibrium."}
+  # abstention
+  - {question: Q49, correct: false, answer: "I don't know."}

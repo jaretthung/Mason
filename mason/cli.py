@@ -47,6 +47,20 @@ def cmd_validate(args) -> int:
     return 0
 
 
+def cmd_grade_calibrate(args) -> int:
+    from .calibrate import AGREEMENT_BAR, run_calibration
+    from .llm import LLM
+
+    llm = LLM.from_config()
+    res = run_calibration(llm, args.course_dir, args.labels)
+    for d in res.disagreements:
+        print(f"- {d['question']}: human={d['human']} ai={d['ai']} :: {d['answer'][:80]!r}\n    {d['rationale']}")
+    print(f"\nAgreement: {res.agree}/{res.n} = {res.agreement:.0%} (bar {AGREEMENT_BAR:.0%}) -> "
+          f"{'PASS' if res.passed else 'FAIL'}")
+    print(llm.ledger.summary())
+    return 0 if res.passed else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="mason", description="Mason, the AI student.")
     sub = p.add_subparsers(dest="command", required=True)
@@ -54,10 +68,14 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("spend", help="Show API spend this month")
     v = sub.add_parser("validate", help="Check a course folder (schema, files, tags, variants) and print stats")
     v.add_argument("course_dir")
+    g = sub.add_parser("grade-calibrate", help="Check AI grader agreement with human labels (live API calls)")
+    g.add_argument("course_dir")
+    g.add_argument("--labels", default="calibration/grader_labels.yaml")
     return p
 
 
-COMMANDS = {"ping": cmd_ping, "spend": cmd_spend, "validate": cmd_validate}
+COMMANDS = {"ping": cmd_ping, "spend": cmd_spend, "validate": cmd_validate,
+            "grade-calibrate": cmd_grade_calibrate}
 
 
 def main(argv: list[str] | None = None) -> int:
