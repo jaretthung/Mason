@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
+.mason/
+evals/out/
+courses/private/*
+!courses/private/README.md
+*.db
+node_modules/
+web/dist/
+.env

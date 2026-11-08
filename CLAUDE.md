@@ -6,7 +6,8 @@ teacher sees where the materials fall short. Read `SPEC.md` (what), `PLAN.md` (h
 
 ## Commands (planned; update as they land)
 - Install: `pip install -e ".[dev]"` (Python 3.11+)
-- Tests (offline, FakeLLM): `pytest` · live API tests: `pytest -m live`
+- Tests (offline, FakeLLM): `python3 -m pytest` · live API tests (cost money): `python3 -m pytest -m live`
+- Check API setup + cost: `mason ping` · spend this month: `mason spend`
 - Demo end to end: `mason demo`
 - Evaluate: `mason eval courses/sample-bio [--approach notebook|baseline] [--all]`
 - Validate a course folder: `mason validate <course_dir>`

@@ -1,0 +1,49 @@
+# Mason configuration. Every Claude call goes through mason/llm.py, which reads this file.
+
+[budget]
+per_run_usd = 10.0        # hard cap for one run (an exam, an eval pass); calls stop once reached
+per_month_usd = 150.0     # hard cap across all runs in a calendar month (tracked in .mason/spend.json)
+
+[cache]
+dir = ".mason/cache"      # identical requests are answered from disk at $0
+
+# Model + effort per role. Effort: low | medium | high | xhigh | max.
+[roles.notebook]
+model = "claude-opus-5-5"
+effort = "high"
+[roles.solver]
+model = "claude-sonnet-5-5"
+effort = "medium"
+[roles.checker]
+model = "claude-sonnet-5-5"
+effort = "high"
+[roles.grader]
+model = "claude-sonnet-5-5"
+effort = "medium"
+[roles.baseline]
+model = "claude-sonnet-5-5"
+effort = "medium"
+[roles.tagger]
+model = "claude-sonnet-5-5"
+effort = "low"
+[roles.ping]
+model = "claude-haiku-5-5"
+effort = "low"
+
+# USD per million tokens (Anthropic list prices, Oct 2026 — verify on the pricing page).
+# cache_write = 1.25 x input (5-minute cache); cache_read per model table.
+[prices."claude-opus-5-5"]
+input = 4.00
+output = 20.00
+cache_read = 0.20
+cache_write = 5.00
+[prices."claude-sonnet-5-5"]
+input = 2.00
+output = 10.00
+cache_read = 0.20
+cache_write = 2.50
+[prices."claude-haiku-5-5"]
+input = 0.10
+output = 0.50
+cache_read = 0.01
+cache_write = 0.125
